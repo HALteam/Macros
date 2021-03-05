@@ -1,0 +1,32 @@
+Sub Imagen()
+'
+' Imagen Macro
+'
+'Código para generar una imagen a partir de un rango específico de celdas
+
+Dim strRng As Range 'Se declara una variable tipo Range
+Dim strPath As String 'Se declara la variable tipo String donde se guardará la imagen
+Dim strFile As String 'Se declara la variable tipo String para almacenar el nombre de la imagen
+Dim Cht As Excel.ChartObject 'Se declara la variable Excel.ChartObject
+Set strRng = ActiveWorkbook.Sheets("Hoja").Range("A1:O80") 'Se declara el rango (en este caso desde la celda A1 hasta la celda A80)
+strPath = ThisWorkbook.Path & "\" 'Se declara la ruta de la imagen, que será la del libro actual
+strFile = "Imagen.JPEG" 'Se declara el nombre y extensión de la imagen (también puede ser PNG)
+
+ 
+
+strRng.CopyPicture xlScreen, xlPicture
+lWidth = strRng.Width
+lHeight = strRng.Height
+
+Range("W1").Select 'Se selecciona una celda que no se esté utilizando en la hoja actual
+
+ActiveSheet.Shapes.AddChart 'Proceso de creación de la imagen
+ActiveSheet.ChartObjects(1).Select
+With Selection
+.Width = lWidth
+.Height = lHeight
+.Chart.Paste
+.Chart.Export Filename:=strPath & strFile
+.Delete
+End With
+End Sub
