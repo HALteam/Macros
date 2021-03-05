@@ -1,5 +1,9 @@
-    //Codigo para convertir archivos de excel en hojas
-    // Todo lo que se encuentre después del símbolo ' es un comentario en lenguaje VBA.
+     Aclaraciones - leer antes de copiar el codigo 
+    1. cualquier cosa despues de una comilla simple es un comentario , no hace parte del codigo , sirve para aclarar la funcionalidad del codigo
+      ejemplo : 'hola soy un comentario
+    2.Codigo para convertir archivos de excel en hojas
+    
+    ' **************************************************************ABRIR*******************************************************************************************
     
     Dim xStrPath As String         'Definicion de todas las variables
     Dim xStrPathOutput As String
@@ -23,3 +27,4 @@
     Workbooks(xStrAWBName).Close                                    'Cierra todos los archivos
     xStrFName = Dir()
     
+    '************************************************************CERRAR*******************************************************************************************
