@@ -1,0 +1,14 @@
+     Aclaraciones - leer antes de copiar el codigo 
+    1. cualquier cosa despues de una comilla simple es un comentario , no hace parte del codigo , sirve para aclarar la funcionalidad del codigo
+      ejemplo : 'hola soy un comentario
+    2.Codigo para agregar texto a celdas
+  ' **************************************************************ABRIR*******************************************************************************************
+    
+    Range("A1").Select                            'Selecccion de la celda en donde se quiere agregar el texto
+    ActiveCell.FormulaR1C1 = "# PERSONAS"               'Se agrega el texto que se quiere mostrar
+    Selection.AutoFill Destination:=Range("A1:A" & Cells(Rows.Count, "B").End(xlUp).Row), Type:=xlFillDefault   'Se arrastra el texto hasta que no encuentre datos en la columna B
+    Columns.AutoFit
+    
+    '************************************************************CERRAR*******************************************************************************************
+    'Se esta tomando la columna B como referencia para cuantas celdas quiere que se arrastre.
+    'Cuando no haya mas datos en la columna B dejara se arrastrarse la columna A
