@@ -1,0 +1,20 @@
+    Aclaraciones - leer antes de copiar el codigo 
+    1. cualquier cosa despues de una comilla simple es un comentario , no hace parte del codigo , sirve para aclarar la funcionalidad del codigo
+      ejemplo : 'hola soy un comentario
+    2. Environ("UserProfile")  'identifica la ruta del usuario que esta usando el computador ----> "C:\Users\INURIBEL"
+    3.  los string se unen con el caracter ---> &  
+  '**************************************************************ABRIR******************************************************************************************* 
+  
+   Range("A2").Select               'Seleccionamos la celda en donde queremos agregar la formula
+    ActiveCell.FormulaR1C1 = _
+        "=+IF(RC[29]=""OK"",""Retiro"",""NOMINA DE CIERRE DE MES"")"   ' Agregamos la formula, si esta tiene otras celdas involucradas se debe agregar la distancia en la que se encuentra.
+    Range("A2").Select                                   
+    Selection.AutoFill Destination:=Range("A2:A" & Cells(Rows.Count, "F").End(xlUp).Row), Type:=xlFillDefault      'Se arrastra la formula hasta que se encuentren datos
+    Columns.AutoFit                     'Se ajustan las margenes de las columnas
+    
+  '************************************************************CERRAR*******************************************************************************************
+  
+  'Para las formulas que tengan otras celdas involucradas se debe agregar la distancia que esta tiene respecto a la celda que se desea que tiene la formula.
+  'Por ejemplo si deseo poner una formula en A1, pero esta necesita datos de D1 se debe remplazar en la formula la celda D1 por un RC[3]
+  
+  
