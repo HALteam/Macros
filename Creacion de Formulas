@@ -1,8 +1,7 @@
     Aclaraciones - leer antes de copiar el codigo 
     1. cualquier cosa despues de una comilla simple es un comentario , no hace parte del codigo , sirve para aclarar la funcionalidad del codigo
       ejemplo : 'hola soy un comentario
-    2. Environ("UserProfile")  'identifica la ruta del usuario que esta usando el computador ----> "C:\Users\INURIBEL"
-    3.  los string se unen con el caracter ---> &  
+
   '**************************************************************ABRIR******************************************************************************************* 
   
    Range("A2").Select               'Seleccionamos la celda en donde queremos agregar la formula
