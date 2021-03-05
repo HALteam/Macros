@@ -1,0 +1,12 @@
+'Macro para generar un documento copia a partir del documento activo
+Sub Nuevodoc()
+'
+' Nuevodoc Macro
+'
+Dim Ruta As String 'Se declara una variable tipo String 
+
+Ruta = ActiveWorkbook.Path & "\" ' 'Se declara la ruta del archivo siendo esta la ruta del archivo actual
+ThisWorkbook.SaveCopyAs Ruta & "Nombre " & Format(Now, "dd-mm-yy") & ".xlsm" 'Se guarda una copia con el nuevo nombre y la nueva extensión (El formato: Format(Now, ) se incluye si se desea añadir fecha actual al archivo
+
+'
+End Sub
