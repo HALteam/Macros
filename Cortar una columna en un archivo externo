@@ -1,1 +1,20 @@
+'Macro para cortar una columna en un archivo exterior al abierto
+Sub Cortar()
+'
+' Cortar Macro
+'
+Dim x As Workbook 'Se declara una variable tipo Workbook
+Dim Ruta As String 'Se declara una variable tipo String
 
+Ruta = ActiveWorkbook.Path & "\" 'Se especifica la ruta donde se encuentra el archivo que se desea abrir
+
+Set x = Workbooks.Open(Ruta & "Nombre "  & ".xlsx") 'Código para abrir el archivo (se debe considerar el nombre del archivo, si tiene fechas o elementos externos y su extensión)
+
+x.Sheets("Hoja").Columns("C:C").Delete Shift:=xlToLeft 'Elegir la hoja donde se desea cortar la columna y elegir así el rango de columnas, en este caso la C
+    
+x.Save 
+
+x.Close
+'
+    
+End Sub
