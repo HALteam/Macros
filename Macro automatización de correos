@@ -1,0 +1,15 @@
+//Script para descargar archivos adjuntos de un correo electrónico automáticamente a una carpeta en el equipo    
+Public Sub DescargarAdjuntos(Message As Outlook.MailItem)
+
+    Dim Attachment As Outlook.Attachment
+    Dim Path As String
+    
+    Path = "C:\" //Ruta donde queremos guardar el archivo
+    
+    For Each Attachment In Message.Attachments
+        Attachment.SaveAsFile Path & Attachment.DisplayName
+    Next
+End Sub
+
+
+
